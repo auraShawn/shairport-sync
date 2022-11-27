@@ -16,8 +16,9 @@
   "map": [
     "config:rw"
   ],
-  "services":
-    "mqtt": want,
+  "services": [
+    "mqtt:want"
+  ], 
   "apparmor": true,
   "init": false
   },
