@@ -3,9 +3,9 @@ FROM $BUILD_FROM AS builder
 
 # Check required arguments exist. These will be provided by the Github Action
 # Workflow and are required to ensure the correct branches are being used.
-ARG SHAIRPORT_SYNC_BRANCH
+ARG SHAIRPORT_SYNC_BRANCH=master
 RUN test -n "$SHAIRPORT_SYNC_BRANCH"
-ARG NQPTP_BRANCH
+ARG NQPTP_BRANCH=main
 RUN test -n "$NQPTP_BRANCH"
 
 RUN apk -U add \
