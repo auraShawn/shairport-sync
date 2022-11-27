@@ -50,3 +50,5 @@ build
 
 # vscode
 .vscode
+!/config.json
+

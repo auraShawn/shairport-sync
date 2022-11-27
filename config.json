@@ -1,0 +1,45 @@
+{
+  "name": "HASS Shairport Sync",
+  "version": "1.1-rc0",
+  "slug": "hass-shairport-sync",
+  "description": "Home Assistant Shairport Sync with Airplay 2 and MQTT support",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "services",
+  "boot": "auto",
+  "hassio_api": true,
+  "homeassistant_api": true,
+  "host_network": true,
+  "hassio_role": "default",
+  "privileged": [],
+  "audio": true,
+  "devices": "/dev/snd",
+  "map": [
+    "config:rw"
+  ],
+  "services":
+    "mqtt": want,
+  "apparmor": true,
+  "init": false
+  },
+  "options": {
+    "airplay_2": true,
+    "log_level": "info",
+    "avahi_interfaces": "",
+    "avahi_hostname": "",
+    "avahi_domainname": "local",
+    "airplay_name": "Hass.io",
+    "enable_ipv6": true
+  },
+  "schema": {
+    "airplay_2": "bool",
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
+    "avahi_interfaces": "str",
+    "avahi_hostname": "str",
+    "avahi_domainname": "str",
+    "airplay_name": "str",
+    "enable_ipv6": "bool"
+  },
+  "environment": {
+    "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
+  }
+}
