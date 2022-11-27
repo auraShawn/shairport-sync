@@ -20,8 +20,7 @@
     "mqtt:want"
   ], 
   "apparmor": true,
-  "init": false
-  },
+  "init": false,
   "options": {
     "airplay_2": true,
     "log_level": "info",
