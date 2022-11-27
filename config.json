@@ -12,7 +12,9 @@
   "hassio_role": "default",
   "privileged": [],
   "audio": true,
-  "devices": "/dev/snd",
+  "devices": [
+    "/dev/snd"
+  ],
   "map": [
     "config:rw"
   ],
