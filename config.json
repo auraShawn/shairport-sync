@@ -13,9 +13,6 @@
   "hassio_role": "default",
   "privileged": [],
   "audio": true,
-  "devices": [
-    "/dev/snd/controlC0"
-  ],
   "map": [
     "config:rw",
     "share:rw"
