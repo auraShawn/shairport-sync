@@ -4,7 +4,7 @@
   "slug": "hass-shairport-sync",
   "description": "Home Assistant Shairport Sync with Airplay 2 and MQTT support",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
-  "startup": "services",
+  "startup": "system",
   "boot": "auto",
   "hassio_api": true,
   "homeassistant_api": true,
