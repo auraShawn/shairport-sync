@@ -1,6 +1,9 @@
 ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.7
 FROM $BUILD_FROM AS builder
 
+# Mount /data folder as volume to persist configuration file
+VOLUME ./data/shairport-sync:/etc
+
 # Check required arguments exist. These will be provided by the Github Action
 # Workflow and are required to ensure the correct branches are being used.
 ARG SHAIRPORT_SYNC_BRANCH=master
@@ -11,6 +14,7 @@ RUN test -n "$NQPTP_BRANCH"
 RUN apk -U add \
         git \
         build-base \
+        alsa-plugins-pulse \
         autoconf \
         automake \
         libtool \
@@ -104,9 +108,6 @@ RUN adduser -D shairport-sync -G shairport-sync
 
 # Add the shairport-sync user to the pre-existing audio group, which has ID 29, for access to the ALSA stuff
 RUN addgroup -g 29 docker_audio && addgroup shairport-sync docker_audio && addgroup shairport-sync audio
-
-# Mount /data folder as volume to persist configuration file
-VOLUME ./data/shairport-sync/shairport-sync.conf:/etc/shairport-sync.conf
 
 # Remove anything we don't need.
 RUN rm -rf /lib/apk/db/*

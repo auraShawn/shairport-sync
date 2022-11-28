@@ -9,6 +9,7 @@
   "hassio_api": true,
   "homeassistant_api": true,
   "host_network": true,
+  "host_dbus": true,
   "hassio_role": "default",
   "privileged": [],
   "audio": true,
@@ -16,7 +17,8 @@
     "/dev/snd/controlC0"
   ],
   "map": [
-    "config:rw"
+    "config:rw",
+    "share:rw"
   ],
   "services": [
     "mqtt:want"
