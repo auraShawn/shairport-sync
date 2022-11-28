@@ -13,7 +13,7 @@
   "privileged": [],
   "audio": true,
   "devices": [
-    "/dev/snd"
+    "/dev/snd/controlC0"
   ],
   "map": [
     "config:rw"
