@@ -1,8 +1,8 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.7
+ARG BUILD_FROM=alpine:3.12
 FROM $BUILD_FROM AS builder
 
 # Mount /data folder as volume to persist configuration file
-VOLUME ./data/shairport-sync:/etc
+VOLUME ./shairport-sync:/etc
 
 # Check required arguments exist. These will be provided by the Github Action
 # Workflow and are required to ensure the correct branches are being used.
@@ -71,7 +71,8 @@ WORKDIR /
 ##### SPS END #####
 
 # Shairport Sync Runtime System
-FROM crazymax/alpine-s6:3.12-3.1.1.2
+# FROM crazymax/alpine-s6:3.12-3.1.1.2
+FROM ghcr.io/hassio-addons/base:12.2.7
 
 RUN apk -U add \
         alsa-lib \
