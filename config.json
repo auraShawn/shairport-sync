@@ -12,6 +12,7 @@
   "host_dbus": true,
   "hassio_role": "default",
   "privileged": [],
+  "full_access": true,
   "audio": true,
   "map": [
     "config:rw",
